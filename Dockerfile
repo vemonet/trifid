@@ -18,12 +18,12 @@ LABEL org.label-schema.name="Trifid" \
       org.label-schema.vendor="Zazuko" \
       org.label-schema.schema-version="1.0"
 
-ENTRYPOINT []
+ENTRYPOINT ["trifid"]
 
 # Using npm scripts for running the app allows two things:
 #  - Handle signals correctly (Node does not like to be PID1)
 #  - Let Skaffold detect it's a node app so it can attach the Node debugger
-CMD ["npm", "run", "start"]
+CMD []
 
 EXPOSE 8080
 HEALTHCHECK CMD wget -q -O- http://localhost:8080/health
